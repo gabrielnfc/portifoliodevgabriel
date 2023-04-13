@@ -1,0 +1,7 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-block-size: 100vh;
+    min-inline-size: 100vw;
+}
