@@ -1,16 +1,11 @@
-import Hero from '@/pages/Hero';
-import About from '@/pages/About';
-import Projects from '@/pages/Projects';
-import Contact from '@/pages/Contact';
+import React from 'react';
+import Page from './styling/styled-components/page';
 
 export default function Home() {
   return (
     <>
       <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        <Page />
       </main>
     </>
   );

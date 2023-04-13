@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/About.tsx", "src/pages/About.tsx", "src/pages/Contact.tsx", "src/pages/Contact.tsx", "src/pages/Hero.tsx", "src/pages/Hero.tsx", "src/pages/Projects.tsx", "src/pages/Projects.tsx", "src/app/head.tsx", "src/app/layout.tsx", "src/app/layout.tsx", "src/app/page.tsx", "src/app/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/About/About.tsx.tsxsrc/app/About/About.tsxbout.tsx", "src/app/Contact/Contact.tsxct.tsrc/app/Contact/Contact.tsx/Contact.tsx", "src/app/Hero/Hero.tsx", "src/app/Hero/Hero.tsx", "src/components/Projects.tsx", "src/components/Projects.tsx", "src/app/head.tsx", "src/app/layout.tsx", "src/app/layout.tsx", "src/app/page.tsx", "src/app/page.tsx", "src/components/About.jsx", "src/components/About.jsx"],
   "exclude": ["node_modules"]
 }

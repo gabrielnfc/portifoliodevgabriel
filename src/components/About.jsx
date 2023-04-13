@@ -1,39 +1,39 @@
-'use client';
 import React from 'react';
 import styled from 'styled-components';
 
-const { ProjectsContainer, Title, Content } = StyledProjects();
+const { AboutContainer, Title, Content } = StyledAbout();
 
-const Projects = () => {
+function About() {
   return (
     <>
-      <ProjectsContainer>
-        <Title>Projects</Title>
+      <AboutContainer>
+        <Title>Sobre mim</Title>
         <Content>
           <p>
-            Olá! Meu nome é [seu nome] e sou um desenvolvedor front-end. Eu
-            sempre fui apaixonado por tecnologia e, em particular, pela web.
-            Comecei a programar há [x] anos e nunca mais parei.
+            Olá! Meu nome é [seu nome] e sou um desenvolvedor front-end. Eu sempre
+            fui apaixonado por tecnologia e, em particular, pela web. Comecei a
+            programar há [x] anos e nunca mais parei.
           </p>
           <p>
             Durante minha carreira, já trabalhei com várias tecnologias e
-            frameworks, como React, Angular, Vue.js, entre outros. Adoro
-            aprender coisas novas e sempre estou procurando me aprimorar.
+            frameworks, como React, Angular, Vue.js, entre outros. Adoro aprender
+            coisas novas e sempre estou procurando me aprimorar.
           </p>
           <p>
             Além disso, sou uma pessoa muito dedicada e comprometida com meus
-            projetos. Sempre busco entender as necessidades do cliente e
-            entregar um trabalho de qualidade.
+            projetos. Sempre busco entender as necessidades do cliente e entregar
+            um trabalho de qualidade.
           </p>
         </Content>
-      </ProjectsContainer>
+      </AboutContainer>
     </>
   );
 }
 
-export default Projects;
-function StyledProjects() {
-  const ProjectsContainer = styled.div`
+export default About;
+
+function StyledAbout() {
+  const AboutContainer = styled.div`
   display: flex;
   block-size: 98vh;
   flex-direction: column;
@@ -60,6 +60,6 @@ function StyledProjects() {
     margin-block-end: 10px;
   }
 `;
-  return { ProjectsContainer, Title, Content };
+  return { AboutContainer, Title, Content };
 }
 

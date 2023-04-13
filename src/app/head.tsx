@@ -1,4 +1,4 @@
-export default function Head() {
+export default function Head(): JSX.Element {
   return (
     <>
       <title> Gabriel Nascimento </title>
@@ -7,4 +7,10 @@ export default function Head() {
       <link rel="icon" href="👋" />
     </>
   );
+  
 }
+
+export const metadata = {
+  title: 'Portifólio | Gabriel Nascimento',
+  description: 'Meu portifólio',
+};
