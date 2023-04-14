@@ -1,14 +1,16 @@
-import React from "react";
+export const metadata = {
+  title: 'Portifólio | Gabriel Nascimento',
+  description: 'Meu portifólio',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html>
-      <head />
+    <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }

@@ -19,10 +19,15 @@ function StyledNav() {
     text-decoration: none;
     position: relative;
     inset-inline-start: 72rem;
-    text-decoration: none;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
+  }
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    color: white !important;
+    padding: 0.5rem;
   }
 }
 `;
@@ -43,7 +48,7 @@ function Navbar(): JSX.Element {
             <Link href="Projects"> Projects </Link>
           </li>
           <li>
-            <Link href="Contacts"> Contact </Link>
+            <Link href="Contact"> Contact </Link>
           </li>
         </ul>
       </Nav>
