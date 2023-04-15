@@ -6,7 +6,8 @@ const { StyledFooter, FooterText, FooterLink } = Estilo();
 function Estilo() {
   const StyledFooter = styled.footer`
   background-color: #f2f2f2;
-  padding: 15px;
+  padding: 1rem;
+  margin: -0.5rem;
   text-align: center;
 `;
 
@@ -28,7 +29,7 @@ function Footer() {
   return (
     <StyledFooter>
       <FooterText>
-        © {new Date().getFullYear()} My Company. All rights reserved.
+        © {new Date().getFullYear()} Gabriel Nascimento. All rights reserved.
       </FooterText>
       <FooterText>
         Made with ❤️ by{' '}

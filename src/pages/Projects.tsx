@@ -35,7 +35,7 @@ export default Projects;
 function StyledProjects() {
   const ProjectsContainer = styled.div`
   display: flex;
-  block-size: 98vh;
+  block-size: 89vh;
   flex-direction: column;
   background-color: #f1f1f1;
   padding: 20px;

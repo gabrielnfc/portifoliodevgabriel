@@ -1,18 +1,110 @@
-"use client"
+'use client';
 import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 
-const { Title, ContactContainer, Box, Form, Label, Input, TextArea, Button } = StyledContact();
+const Title = styled.h1`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-family: 'Centra', sans-serif !important;
+  font-weight: bold;
+  text-align: center;
+  margin: 5rem;
+  inset-block-start: 1rem;
+  color: black;
+`;
 
-const Contact = () => {
+const ContactContainer = styled.div`
+  display: flex;
+  block-size: 89vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  p {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Centra', sans-serif !important;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    inset-block-start: -2rem;
+  }
+`;
+
+const Box = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #f1f1f1;
+  inset-block-start: -4rem;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 5px;
+  label {
+    font-family: 'Centra', sans-serif !important;
+  }
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  inline-size: 600px;
+  max-inline-size: 100%;
+  max-block-size: 100%;
+`;
+
+const Label = styled.label`
+  margin-block-end: 5px;
+  font-weight: bold;
+`;
+
+const Input = styled.input`
+  font-family: 'Centra', sans-serif !important;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-block-end: 10px;
+`;
+
+const TextArea = styled.textarea`
+  padding: 2rem;
+  border-radius: 5px;
+  border: none;
+  margin-block-end: 1rem;
+  max-inline-size: 100%;
+  max-block-size: 350px;
+`;
+
+const Button = styled.button`
+  inline-size: 120px;
+  block-size: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 16px;
+  
+  cursor: pointer;
+
+  &:hover {
+    background-color: #007bff;
+  }
+`;
+
+function Contact(): JSX.Element {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
-  function sendEmail(e: { preventDefault: () => void; }) {
+  function sendEmail(e: { preventDefault: () => void }) {
     e.preventDefault();
 
     const templateParanms = {
@@ -48,8 +140,8 @@ const Contact = () => {
 
   return (
     <>
-      <Title> Deixe aqui a sua mensagem </Title>
       <ContactContainer>
+        <Title> Deixe aqui a sua mensagem </Title>
         <Box>
           <Form onSubmit={sendEmail}>
             <Label htmlFor="name">Nome</Label>
@@ -60,7 +152,8 @@ const Contact = () => {
               name="name"
               onChange={(e) => setName(e.target.value)}
               value={name}
-              required />
+              required
+            />
 
             <Label htmlFor="email">E-mail</Label>
             <Input
@@ -70,7 +163,8 @@ const Contact = () => {
               name="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              required />
+              required
+            />
 
             <Label htmlFor="phone">Telefone</Label>
             <Input
@@ -80,7 +174,8 @@ const Contact = () => {
               name="phone"
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
-              required />
+              required
+            />
 
             <Label htmlFor="message">Digite sua mensagem aqui</Label>
             <TextArea
@@ -89,7 +184,8 @@ const Contact = () => {
               name="message"
               onChange={(e) => setMessage(e.target.value)}
               value={message}
-              required />
+              required
+            />
 
             <Button type="submit">Enviar</Button>
           </Form>
@@ -105,94 +201,3 @@ const Contact = () => {
 }
 
 export default Contact;
-function StyledContact() {
-  const Title = styled.h1`
-  display: flex;
-  position: relative;
-  justify-content: center;
-  font-size: 45px;
-  font-family: 'Centra', sans-serif !important;
-  font-weight: bold;
-  text-align: center;
-  padding: 2rem;
-  inset-block-start: 1rem;
-  color: black;
-`;
-
-  const ContactContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  block-size: 74vh;
-  p {
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Centra', sans-serif !important;
-    font-weight: bold;
-    text-align: center;
-    color: var(--color-white);
-  }
-`;
-
-  const Box = styled.div`
-  display: flex;
-  position: relative;
-  background-color: #f1f1f1;
-  inset-block-start: -4rem;
-  padding: 3rem;
-  margin: 1rem;
-  border-radius: 5px;
-  label {
-    font-family: 'Centra', sans-serif !important;
-  }
-`;
-
-  const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  inline-size: 600px;
-  max-inline-size: 100%;
-  max-block-size: 100%;
-`;
-
-  const Label = styled.label`
-  margin-block-end: 5px;
-  font-weight: bold;
-`;
-
-  const Input = styled.input`
-  font-family: 'Centra', sans-serif !important;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin-block-end: 10px;
-`;
-
-  const TextArea = styled.textarea`
-  padding: 35px;
-  border-radius: 5px;
-  border: none;
-  margin-block-end: 15px;
-  max-inline-size: 100%;
-  max-block-size: 350px;
-`;
-
-  const Button = styled.button`
-  inline-size: 120px;
-  block-size: 40px;
-  border: none;
-  border-radius: 5px;
-  background-color: #1e90ff;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #007bff;
-  }
-`;
-  return { Title, ContactContainer, Box, Form, Label, Input, TextArea, Button };
-}
-

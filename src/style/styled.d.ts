@@ -10,6 +10,8 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     name: string;
     borderRadius: string;
+    padding: string;
+    margin: string;
     bodyColor: string;
     textColor: string;
     palette: {

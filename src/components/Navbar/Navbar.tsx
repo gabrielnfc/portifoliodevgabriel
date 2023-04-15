@@ -1,58 +1,57 @@
-import Link from 'next/link';
+'use client';
 import React from 'react';
+import { useState } from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
+import { NAV_ITEMS } from './NAV_ITEMS';
 
-const Nav = StyledNav();
-
-function StyledNav() {
-  return styled.nav`
-  ul {
-    background: black;
-    display: flex;
-    padding: 0.5rem;
-    inline-size: 100%;
-    position: fixed;
-  }
-  li {
-    color: white;
-    padding: 1rem;
-    text-decoration: none;
+const Nav = styled.nav`
+  display: flex;
+  position: fixed;
+  inline-size: 100%;
+  height: 4rem;
+  align-items: center;
+  margin: -0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.5px 5px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  h1 {
+    font-family: 'Centra', sans-serif !important;
     position: relative;
-    inset-inline-start: 72rem;
-    cursor: pointer;
-    &:hover {
-      text-decoration: underline;
+    inset-inline-start: 2rem;
   }
   a {
-    font-size: 24px;
+    font-size: 18px;
+    font-family: 'Centra', sans-serif !important;
+    align-items: stretch;
+    color: #000;
     text-decoration: none;
-    color: white !important;
-    padding: 0.5rem;
   }
-}
+  ul {
+  position: relative;
+  inset-inline-start:65rem;
+  justify-content: space-around;
+  }
 `;
-}
 
-function Navbar(): JSX.Element {
+export default function Navbar() {
+  const [navbar, setNavbar] = useState(false);
   return (
     <>
       <Nav>
-        <ul>
-          <li>
-            <Link href="/"> Home </Link>
-          </li>
-          <li>
-            <Link href="/About"> About Us </Link>
-          </li>
-          <li>
-            <Link href="Projects"> Projects </Link>
-          </li>
-          <li>
-            <Link href="Contact"> Contact </Link>
-          </li>
-        </ul>
+        <Link href="/">
+          <h1>Gabriel Nascimento</h1>
+        </Link>
+        {NAV_ITEMS.map((item, idx) => {
+          return (
+            <Link key={idx} href={item.page} onClick={() => setNavbar(!navbar)}>
+              <ul>
+              {item.label}
+              </ul>
+            </Link>
+          );
+        })}
       </Nav>
     </>
   );
 }
-export default Navbar;

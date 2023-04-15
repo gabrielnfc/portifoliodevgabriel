@@ -2199,6 +2199,11 @@ scheduler@^0.23.0:
   dependencies:
     loose-envify "^1.1.0"
 
+scroll-module@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/scroll-module/-/scroll-module-1.0.5.tgz"
+  integrity sha512-7eAVKDmSiyUVk4IT6hI2Kmy4t8Fq4x/w3Umhq/S5W7r9c+0ZIxKGwJ2kI/fL9pic5KsC/1qVaEcxV4GAGyY/2Q==
+
 semver@^6.3.0:
   version "6.3.0"
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"

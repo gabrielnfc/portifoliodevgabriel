@@ -24,7 +24,7 @@ export default Hero;
 function StyledHero() {
   const Container = styled.div`
     display: flex;
-    block-size: 100vh;
+    block-size: 92vh;
     flex-direction: column;
     background-color: white;
     color: black;
