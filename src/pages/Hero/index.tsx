@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,15 +7,17 @@ const { Container, Slogan } = StyledHero();
 const Hero = () => {
   return (
     <>
-      <Container>
-        <h1>Olá! Meu nome é Gabriel</h1>
-        <Slogan>
-          <p>
-            {' '}
-            Desenvolvedor Front-end apaixonado por criar interfaces incríveis{' '}
-          </p>
-        </Slogan>
-      </Container>
+      <section>
+        <Container>
+          <h1>Olá! Meu nome é Gabriel</h1>
+          <Slogan>
+            <p>
+              {' '}
+              Desenvolvedor Front-end apaixonado por criar interfaces incríveis{' '}
+            </p>
+          </Slogan>
+        </Container>
+      </section>
     </>
   );
 };

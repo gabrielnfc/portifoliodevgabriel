@@ -90,7 +90,7 @@ const Button = styled.button`
   background-color: #1e90ff;
   color: #fff;
   font-size: 16px;
-  
+
   cursor: pointer;
 
   &:hover {
@@ -140,62 +140,64 @@ function Contact(): JSX.Element {
 
   return (
     <>
-      <ContactContainer>
-        <Title> Deixe aqui a sua mensagem </Title>
-        <Box>
-          <Form onSubmit={sendEmail}>
-            <Label htmlFor="name">Nome</Label>
-            <Input
-              type="text"
-              placeholder="Seu nome"
-              id="name"
-              name="name"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-              required
-            />
+      <section>
+        <ContactContainer>
+          <Title> Deixe aqui a sua mensagem </Title>
+          <Box>
+            <Form onSubmit={sendEmail}>
+              <Label htmlFor="name">Nome</Label>
+              <Input
+                type="text"
+                placeholder="Seu nome"
+                id="name"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                required
+              />
 
-            <Label htmlFor="email">E-mail</Label>
-            <Input
-              type="email"
-              placeholder="Seu email"
-              id="email"
-              name="email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
+              <Label htmlFor="email">E-mail</Label>
+              <Input
+                type="email"
+                placeholder="Seu email"
+                id="email"
+                name="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                required
+              />
 
-            <Label htmlFor="phone">Telefone</Label>
-            <Input
-              type="tel"
-              placeholder="Seu telefone"
-              id="phone"
-              name="phone"
-              onChange={(e) => setPhone(e.target.value)}
-              value={phone}
-              required
-            />
+              <Label htmlFor="phone">Telefone</Label>
+              <Input
+                type="tel"
+                placeholder="Seu telefone"
+                id="phone"
+                name="phone"
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
+                required
+              />
 
-            <Label htmlFor="message">Digite sua mensagem aqui</Label>
-            <TextArea
-              id="message"
-              placeholder="deixe aqui a sua mensagem"
-              name="message"
-              onChange={(e) => setMessage(e.target.value)}
-              value={message}
-              required
-            />
+              <Label htmlFor="message">Digite sua mensagem aqui</Label>
+              <TextArea
+                id="message"
+                placeholder="deixe aqui a sua mensagem"
+                name="message"
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
+                required
+              />
 
-            <Button type="submit">Enviar</Button>
-          </Form>
-        </Box>
-        <p>
-          {' '}
-          Se você tem uma pergunta ou apenas quer dizer "Oi", <br></br>farei o
-          possível para entrar em contato com você!{' '}
-        </p>
-      </ContactContainer>
+              <Button type="submit">Enviar</Button>
+            </Form>
+          </Box>
+          <p>
+            {' '}
+            Se você tem uma pergunta ou apenas quer dizer "Oi", <br></br>farei o
+            possível para entrar em contato com você!{' '}
+          </p>
+        </ContactContainer>
+      </section>
     </>
   );
 }

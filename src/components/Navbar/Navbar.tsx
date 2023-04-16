@@ -28,9 +28,9 @@ const Nav = styled.nav`
     text-decoration: none;
   }
   ul {
-  position: relative;
-  inset-inline-start:65rem;
-  justify-content: space-around;
+    position: relative;
+    inset-inline-start: 65rem;
+    justify-content: space-around;
   }
 `;
 
@@ -44,10 +44,8 @@ export default function Navbar() {
         </Link>
         {NAV_ITEMS.map((item, idx) => {
           return (
-            <Link key={idx} href={item.page} onClick={() => setNavbar(!navbar)}>
-              <ul>
-              {item.label}
-              </ul>
+            <Link key={idx} href={item.page}>
+              <ul>{item.label}</ul>
             </Link>
           );
         })}
