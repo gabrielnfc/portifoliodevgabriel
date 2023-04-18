@@ -1,54 +1,128 @@
 'use client';
 import React from 'react';
-import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-scroll/modules';
 import styled from 'styled-components';
-import { NAV_ITEMS } from './NAV_ITEMS';
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const Nav = styled.nav`
   display: flex;
   position: fixed;
   inline-size: 100%;
-  height: 4rem;
+  block-size: 4rem;
   align-items: center;
   margin: -0.5rem;
   background-color: #fff;
   box-shadow: 0 0.5px 5px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
-  h1 {
-    font-family: 'Centra', sans-serif !important;
-    position: relative;
-    inset-inline-start: 2rem;
-  }
+  z-index: +99;
   a {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Centra', sans-serif !important;
     align-items: stretch;
     color: #000;
     text-decoration: none;
   }
-  ul {
-    position: relative;
-    inset-inline-start: 65rem;
-    justify-content: space-around;
+`;
+
+const Button = styled.button`
+  display: flex;
+  font-family: 'Centra', sans-serif !important;
+  position: relative;
+  inset-inline-start: 78rem;
+  border: 0;
+  margin-inline-end: 1rem;
+  background: transparent;
+  cursor: pointer;
+`;
+
+const ButtonIcon = styled(Button)`
+  display: flex;
+  position: relative;
+  inset-inline-start: 1rem;
+  z-index: 99;
+  border: 0;
+  img {
+    inline-size: 12rem;
+    background: transparent;
+    cursor: pointer;
   }
 `;
 
 export default function Navbar() {
-  const [navbar, setNavbar] = useState(false);
   return (
     <>
       <Nav>
-        <Link href="/">
-          <h1>Gabriel Nascimento</h1>
-        </Link>
-        {NAV_ITEMS.map((item, idx) => {
-          return (
-            <Link key={idx} href={item.page}>
-              <ul>{item.label}</ul>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+        >
+          <ButtonIcon>
+            <Link
+              activeClass="active"
+              to="Home"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              <img src="/images/logob.png" />
             </Link>
-          );
-        })}
+          </ButtonIcon>
+        </motion.div>
+
+        <Button>
+          <Link
+            activeClass="active"
+            to="Home"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <p> Home </p>
+          </Link>
+        </Button>
+
+        <Button>
+          <Link
+            activeClass="active"
+            to="About"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <p> Sobre </p>
+          </Link>
+        </Button>
+
+        <Button>
+          <Link
+            activeClass="active"
+            to="Projects"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            <p> Projetos </p>
+          </Link>
+        </Button>
+
+        <Button>
+          <Link
+            activeClass="active"
+            to="Contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            <p> Contato </p>
+          </Link>
+        </Button>
       </Nav>
     </>
   );

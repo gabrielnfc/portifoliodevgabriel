@@ -1,66 +1,150 @@
 'use client';
-import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const { ProjectsContainer, Title, Content } = StyledProjects();
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  inline-size: 98vw;
+  block-size: 92vh;
+  justify-items: center;
+  align-items: center;
+`;
 
-const Projects = () => {
+const TitleTitle = styled.div`
+  font-size: 45px;
+  font-family: 'Centra', sans-serif !important;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  inset-block-start: 5.5rem;
+  justify-content: center;
+  color: #000;
+  z-index: 1;
+  ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
+`;
+
+const Item = styled(motion.div)`
+  inline-size: calc(95% - 2rem);
+  block-size: calc(95% - 2rem);
+  position: relative;
+  padding: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0.3px 0.3px 3px;
+  z-index: ${({ isSelected }) => (isSelected ? '1' : '-1')};
+  inline-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
+  block-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
+  position: ${({ isSelected }) => (isSelected ? 'fixed' : 'relative')};
+  inset-block-start: ${({ isSelected }) => (isSelected ? '5%' : '50px')};
+  inset-inline-start: ${({ isSelected }) => (isSelected ? '8%' : 'auto')};
+  margin: ${({ isSelected }) => (isSelected ? '3%' : 'none')};
+  &:hover {
+    border: 0.5px solid #000;
+    box-shadow: 0.5px 0.5px 10px;
+  }
+`;
+
+const ProjectContainer = styled.div`
+  display: flex;
+  position: relative;
+  display: grid;
+  inset-block-start: 0.5rem;
+  align-items: center;
+  justify-items: center;
+  inline-size: 100%;
+  block-size: 100%;
+  grid-template-columns: 2fr 2fr 2fr;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
+`;
+
+const Subtitle = styled(motion.h5)`
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+`;
+
+const Title = styled(motion.h2)`
+  margin: 5px 0 0;
+  font-size: 24px;
+  color: #333;
+`;
+
+const Button = styled(motion.button)`
+  position: absolute;
+  inset-block-start: 3%;
+  inset-inline-end: 2%;
+  font-family: 'Centra', sans-serif !important;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 2px;
+  border-radius: 5px;
+  margin-block-end: 10px;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  cursor: pointer;
+`;
+
+const items = [
+  { id: 1, subtitle: 'Project subtitle 1', title: 'Project title 1' },
+  { id: 2, subtitle: 'Project subtitle 2', title: 'Project title 2' },
+  { id: 3, subtitle: 'Project subtitle 3', title: 'Project title 3' },
+  { id: 4, subtitle: 'Project subtitle 4', title: 'Project title 4' },
+  { id: 5, subtitle: 'Project subtitle 5', title: 'Project title 5' },
+  { id: 6, subtitle: 'Project subtitle 6', title: 'Project title 6' },
+];
+
+const Project = () => {
+  const [selectedId, setSelectedId] = useState(null);
+  const isBlurActive = selectedId !== null;
+
   return (
     <>
-      <section>
-        <ProjectsContainer>
-          <Title>Projects</Title>
-          <Content>
-            <p>
-              Olá! Meu nome é [seu nome] e sou um desenvolvedor front-end. Eu
-              sempre fui apaixonado por tecnologia e, em particular, pela web.
-              Comecei a programar há [x] anos e nunca mais parei.
-            </p>
-            <p>
-              Durante minha carreira, já trabalhei com várias tecnologias e
-              frameworks, como React, Angular, Vue.js, entre outros. Adoro
-              aprender coisas novas e sempre estou procurando me aprimorar.
-            </p>
-            <p>
-              Além disso, sou uma pessoa muito dedicada e comprometida com meus
-              projetos. Sempre busco entender as necessidades do cliente e
-              entregar um trabalho de qualidade.
-            </p>
-          </Content>
-        </ProjectsContainer>
+      <section id="Projects">
+        <Container>
+          <TitleTitle isBlurActive={isBlurActive}>
+            {' '}
+            <p> Últimos projetos e parcerias </p>{' '}
+          </TitleTitle>
+          <ProjectContainer isBlurActive={isBlurActive}>
+            {items.map((item) => (
+              <Item
+                key={item.id}
+                layoutId={item.id}
+                isSelected={selectedId === item.id}
+                onClick={() => setSelectedId(item.id)}
+              >
+                <Subtitle>{item.subtitle}</Subtitle>
+                <Title>{item.title}</Title>
+              </Item>
+            ))}
+          </ProjectContainer>
+          <AnimatePresence>
+            {selectedId && (
+              <Item
+                key={selectedId}
+                layoutId={selectedId}
+                isSelected={true}
+                initial={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1 }}
+                transition={{ type: 'spring', stiffness: 60, damping: 10 }}
+                onClick={() => setSelectedId(null)}
+              >
+                <Subtitle>{items[selectedId - 1].subtitle}</Subtitle>
+                <Title>{items[selectedId - 1].title}</Title>
+                <Button onClick={() => setSelectedId(null)}>x</Button>
+              </Item>
+            )}
+          </AnimatePresence>
+        </Container>
       </section>
     </>
   );
 };
 
-export default Projects;
-function StyledProjects() {
-  const ProjectsContainer = styled.div`
-    display: flex;
-    block-size: 89vh;
-    flex-direction: column;
-    background-color: #f1f1f1;
-    padding: 20px;
-    justify-content: center;
-  `;
-
-  const Title = styled.h2`
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Black', sans-serif;
-    margin-block-end: 10px;
-    text-align: center;
-  `;
-
-  const Content = styled.div`
-    font-size: 18px;
-    line-height: 1.5;
-    font-family: 'Black', sans-serif;
-    text-align: center;
-
-    p {
-      margin-block-end: 10px;
-    }
-  `;
-  return { ProjectsContainer, Title, Content };
-}
+export default Project;

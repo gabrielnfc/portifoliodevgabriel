@@ -7,7 +7,7 @@ const { AboutContainer, Title, Content } = StyledAbout();
 function About() {
   return (
     <>
-      <section>
+      <section id="About">
         <AboutContainer>
           <Title>Sobre mim</Title>
           <Content>
@@ -38,7 +38,7 @@ export default About;
 function StyledAbout() {
   const AboutContainer = styled.div`
     display: flex;
-    block-size: 89vh;
+    block-size: 98vh;
     flex-direction: column;
     background-color: #f1f1f1;
     padding: 20px;

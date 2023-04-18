@@ -7,7 +7,7 @@ const { Container, Slogan } = StyledHero();
 const Hero = () => {
   return (
     <>
-      <section>
+      <section id="Home">
         <Container>
           <h1>Olá! Meu nome é Gabriel</h1>
           <Slogan>

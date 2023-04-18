@@ -25,6 +25,7 @@ const ContactContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
+  position: relative;
   p {
     text-align: center;
     font-size: 20px;
@@ -140,7 +141,7 @@ function Contact(): JSX.Element {
 
   return (
     <>
-      <section>
+      <section id="Contact">
         <ContactContainer>
           <Title> Deixe aqui a sua mensagem </Title>
           <Box>
