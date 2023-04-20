@@ -1,8 +1,7 @@
-'use client';
 import React from 'react';
-import { Link } from 'react-scroll/modules';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const Nav = styled.div`
   display: flex;
@@ -47,82 +46,120 @@ const ButtonIcon = styled(Button)`
   }
 `;
 
-export default function Navbar() {
+
+
+
+export default function Navbar({ logo }) {
   return (
     <>
-      <Nav>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-        >
-          <ButtonIcon>
-            <Link
-              activeClass="active"
-              to="Home"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+      >
+        <Nav>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          >
+            <ButtonIcon>
+              <Link
+                activeClass="active"
+                to="Home"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                <img src={logo} alt="logo" />
+              </Link>
+            </ButtonIcon>
+          </motion.div>
+
+          <Button>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              onHoverStart={e => { }}
+              onHoverEnd={e => { }}
             >
-              <img src="/images/logob.png" />
-            </Link>
-          </ButtonIcon>
-        </motion.div>
+              <Link
+                activeClass="active"
+                to="Home"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                <p> Home </p>
+              </Link>
+            </motion.a>
+          </Button>
 
-        <Button>
-          <Link
-            activeClass="active"
-            to="Home"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <p> Home </p>
-          </Link>
-        </Button>
 
-        <Button>
-          <Link
-            activeClass="active"
-            to="About"
-            spy={true}
-            smooth={true}
-            offset={0}
-            duration={500}
-          >
-            <p> Sobre </p>
-          </Link>
-        </Button>
+          <Button>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              onHoverStart={e => { }}
+              onHoverEnd={e => { }}
+            >
+              <Link
+                activeClass="active"
+                to="About"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                <p> Sobre </p>
+              </Link>
+            </motion.a>
+          </Button>
 
-        <Button>
-          <Link
-            activeClass="active"
-            to="Projects"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            <p> Projetos </p>
-          </Link>
-        </Button>
 
-        <Button>
-          <Link
-            activeClass="active"
-            to="Contact"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-          >
-            <p> Contato </p>
-          </Link>
-        </Button>
-      </Nav>
+          <Button>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              onHoverStart={e => { }}
+              onHoverEnd={e => { }}
+            >
+              <Link
+                activeClass="active"
+                to="Projects"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                <p> Projetos </p>
+              </Link>
+            </motion.a>
+          </Button>
+
+          <Button>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              onHoverStart={e => { }}
+              onHoverEnd={e => { }}
+            >
+              <Link
+                activeClass="active"
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                <p> Contato </p>
+              </Link>
+            </motion.a>
+          </Button>
+        </Nav >
+      </motion.div>
     </>
   );
 }
-

@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -9,6 +10,10 @@ function About() {
     <>
       <section id="About">
         <AboutContainer>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+          >
           <Title>Sobre mim</Title>
           <Content>
             <p>
@@ -27,6 +32,7 @@ function About() {
               entregar um trabalho de qualidade.
             </p>
           </Content>
+          </motion.div>
         </AboutContainer>
       </section>
     </>

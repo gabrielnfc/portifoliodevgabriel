@@ -16,6 +16,7 @@ function Estilo() {
 
   const FooterLink = styled.a`
   text-decoration: none;
+  color: #b871fc;
   &:hover {
     text-decoration: underline;
   }
@@ -31,7 +32,7 @@ function Footer() {
       </FooterText>
       <FooterText>
         Made with ❤️ by{' '}
-        <FooterLink href="https://www.mycompany.com">My Company</FooterLink>
+        <FooterLink href="https://www.mycompany.com">Dev Gabriel</FooterLink>
       </FooterText>
     </StyledFooter>
   );

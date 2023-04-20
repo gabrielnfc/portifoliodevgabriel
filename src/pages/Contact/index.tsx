@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 const Title = styled.h1`
   display: flex;
@@ -63,6 +64,7 @@ const Form = styled.form`
 const Label = styled.label`
   margin-block-end: 5px;
   font-weight: bold;
+  color: #2b2b2b;
 `;
 
 const Input = styled.input`
@@ -141,62 +143,67 @@ function Contact(): JSX.Element {
   return (
     <>
       <section id="Contact">
-        <ContactContainer>
-          <Title> Deixe aqui a sua mensagem </Title>
-          <Box>
-            <Form onSubmit={sendEmail}>
-              <Label htmlFor="name">Nome</Label>
-              <Input
-                type="text"
-                placeholder="Seu nome"
-                id="name"
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-                required
-              />
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          <ContactContainer>
+            <Title> Deixe aqui a sua mensagem </Title>
+            <Box>
+              <Form onSubmit={sendEmail}>
+                <Label htmlFor="name">Nome</Label>
+                <Input
+                  type="text"
+                  placeholder="Seu nome"
+                  id="name"
+                  name="name"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  required
+                />
 
-              <Label htmlFor="email">E-mail</Label>
-              <Input
-                type="email"
-                placeholder="Seu email"
-                id="email"
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
-                required
-              />
+                <Label htmlFor="email">E-mail</Label>
+                <Input
+                  type="email"
+                  placeholder="Seu email"
+                  id="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  required
+                />
 
-              <Label htmlFor="phone">Telefone</Label>
-              <Input
-                type="tel"
-                placeholder="Seu telefone"
-                id="phone"
-                name="phone"
-                onChange={(e) => setPhone(e.target.value)}
-                value={phone}
-                required
-              />
+                <Label htmlFor="phone">Telefone</Label>
+                <Input
+                  type="tel"
+                  placeholder="Seu telefone"
+                  id="phone"
+                  name="phone"
+                  onChange={(e) => setPhone(e.target.value)}
+                  value={phone}
+                  required
+                />
 
-              <Label htmlFor="message">Digite sua mensagem aqui</Label>
-              <TextArea
-                id="message"
-                placeholder="deixe aqui a sua mensagem"
-                name="message"
-                onChange={(e) => setMessage(e.target.value)}
-                value={message}
-                required
-              />
+                <Label htmlFor="message">Digite sua mensagem aqui</Label>
+                <TextArea
+                  id="message"
+                  placeholder="deixe aqui a sua mensagem"
+                  name="message"
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
+                  required
+                />
 
-              <Button type="submit">Enviar</Button>
-            </Form>
-          </Box>
-          <p>
-            {' '}
-            Se você tem uma pergunta ou apenas quer dizer "Oi", <br></br>farei o
-            possível para entrar em contato com você!{' '}
-          </p>
-        </ContactContainer>
+                <Button type="submit">Enviar</Button>
+              </Form>
+            </Box>
+            <p>
+              {' '}
+              Se você tem uma pergunta ou apenas quer dizer "Oi", <br></br>farei o
+              possível para entrar em contato com você!{' '}
+            </p>
+          </ContactContainer>
+        </motion.div>
       </section>
     </>
   );

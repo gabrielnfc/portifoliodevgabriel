@@ -13,6 +13,8 @@ declare module 'styled-components' {
     padding: string;
     margin: string;
     bodyBackgroundColor: string;
-    bodyTextColor: string;    
+    bodyTextColor: string; 
+    logo: string;   
+    backgroundImage: string;
   }
 }

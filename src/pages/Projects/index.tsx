@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,7 +7,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   inline-size: 98vw;
-  block-size: 92vh;
+  block-size: 98vh;
   justify-items: center;
   align-items: center;
 `;
@@ -32,6 +32,7 @@ const Item = styled(motion.div)`
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0.3px 0.3px 3px;
+  background-color: ${({ theme }) => theme.bodyBackgroundColor};
   z-index: ${({ isSelected }) => (isSelected ? '1' : '-1')};
   inline-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
   block-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
@@ -84,6 +85,7 @@ const Button = styled(motion.button)`
   cursor: pointer;
 `;
 
+
 const items = [
   { id: 1, subtitle: 'Project subtitle 1', title: 'Project title 1' },
   { id: 2, subtitle: 'Project subtitle 2', title: 'Project title 2' },
@@ -100,44 +102,49 @@ const Project = () => {
   return (
     <>
       <section id="Projects">
-        <Container>
-          <TitleTitle isBlurActive={isBlurActive}>
-            {' '}
-            <p> Últimos projetos e parcerias </p>{' '}
-          </TitleTitle>
-          <ProjectContainer isBlurActive={isBlurActive}>
-            {items.map((item) => (
-              <Item
-                key={item.id}
-                layoutId={item.id}
-                isSelected={selectedId === item.id}
-                onClick={() => setSelectedId(item.id)}
-              >
-                <Subtitle>{item.subtitle}</Subtitle>
-                <Title>{item.title}</Title>
-              </Item>
-            ))}
-          </ProjectContainer>
-          <AnimatePresence>
-            {selectedId && (
-              <Item
-                key={selectedId}
-                layoutId={selectedId}
-                isSelected={true}
-                initial={{ opacity: 1, scale: 1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1 }}
-                transition={{ type: 'spring', stiffness: 60, damping: 10 }}
-                onClick={() => setSelectedId(null)}
-              >
-                <Subtitle>{items[selectedId - 1].subtitle}</Subtitle>
-                <Title>{items[selectedId - 1].title}</Title>
-                <Button onClick={() => setSelectedId(null)}>x</Button>
-              </Item>
-            )}
-          </AnimatePresence>
-        </Container>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+        >
+          <Container>
+            <TitleTitle isBlurActive={isBlurActive}>
+              {' '}
+              <p> Últimos projetos e parcerias </p>{' '}
+            </TitleTitle>
+            <ProjectContainer isBlurActive={isBlurActive}>
+              {items.map((item) => (
+                <Item
+                  key={item.id}
+                  layoutId={item.id}
+                  isSelected={selectedId === item.id}
+                  onClick={() => setSelectedId(item.id)}
+                >
+                  <Subtitle>{item.subtitle}</Subtitle>
+                  <Title>{item.title}</Title>
+                </Item>
+              ))}
+            </ProjectContainer>
+            <AnimatePresence>
+              {selectedId && (
+                <Item
+                  key={selectedId}
+                  layoutId={selectedId}
+                  isSelected={true}
+                  initial={{ opacity: 1, scale: 1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 1, scale: 1 }}
+                  whileHover={{ scale: 1 }}
+                  transition={{ type: 'spring', stiffness: 60, damping: 10 }}
+                  onClick={() => setSelectedId(null)}
+                >
+                  <Subtitle>{items[selectedId - 1].subtitle}</Subtitle>
+                  <Title>{items[selectedId - 1].title}</Title>
+                  <Button onClick={() => setSelectedId(null)}>x</Button>
+                </Item>
+              )}
+            </AnimatePresence>
+          </Container>
+        </motion.div>
       </section>
     </>
   );
