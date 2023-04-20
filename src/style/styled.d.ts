@@ -12,15 +12,7 @@ declare module 'styled-components' {
     borderRadius: string;
     padding: string;
     margin: string;
-    bodyColor: string;
-    textColor: string;
-    palette: {
-      common: {
-        black: string;
-        white: string;
-      };
-      primary: IPalette;
-      secondary: IPalette;
-    };
+    bodyBackgroundColor: string;
+    bodyTextColor: string;    
   }
 }

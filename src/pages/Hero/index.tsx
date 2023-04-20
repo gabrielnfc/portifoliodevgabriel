@@ -26,14 +26,12 @@ export default Hero;
 function StyledHero() {
   const Container = styled.div`
     display: flex;
-    block-size: 92vh;
+    block-size: 100vh;
     flex-direction: column;
-    background-color: white;
-    color: black;
     font-family: 'Arial Black', sans-serif;
     font-size: 2rem;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     justify-content: center;
   `;
 

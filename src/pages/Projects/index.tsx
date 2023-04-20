@@ -20,7 +20,6 @@ const TitleTitle = styled.div`
   position: relative;
   inset-block-start: 5.5rem;
   justify-content: center;
-  color: #000;
   z-index: 1;
   ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
 `;
@@ -32,7 +31,6 @@ const Item = styled(motion.div)`
   padding: 2rem;
   border-radius: 10px;
   cursor: pointer;
-  background: #fff;
   box-shadow: 0.3px 0.3px 3px;
   z-index: ${({ isSelected }) => (isSelected ? '1' : '-1')};
   inline-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
@@ -65,13 +63,11 @@ const ProjectContainer = styled.div`
 const Subtitle = styled(motion.h5)`
   margin: 0;
   font-size: 14px;
-  color: #666;
 `;
 
 const Title = styled(motion.h2)`
   margin: 5px 0 0;
   font-size: 24px;
-  color: #333;
 `;
 
 const Button = styled(motion.button)`

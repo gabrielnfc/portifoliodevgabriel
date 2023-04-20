@@ -15,7 +15,6 @@ const Title = styled.h1`
   text-align: center;
   margin: 5rem;
   inset-block-start: 1rem;
-  color: black;
 `;
 
 const ContactContainer = styled.div`
@@ -42,7 +41,7 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #f1f1f1;
+  background-color: #bdbdbd;
   inset-block-start: -4rem;
   padding: 2rem;
   margin: 1rem;

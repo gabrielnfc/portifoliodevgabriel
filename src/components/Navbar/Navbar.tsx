@@ -2,26 +2,23 @@
 import React from 'react';
 import { Link } from 'react-scroll/modules';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-
-const Nav = styled.nav`
+const Nav = styled.div`
   display: flex;
   position: fixed;
   inline-size: 100%;
   block-size: 4rem;
   align-items: center;
   margin: -0.5rem;
-  background-color: #fff;
-  box-shadow: 0 0.5px 5px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-  z-index: +99;
+  background-color: ${({ theme }) => theme.bodyBackgroundColor};
+  box-shadow: 0 0.5px 5px 0 rgba(0, 0, 0, 0.37);
+  z-index: 10;
   a {
     font-size: 16px;
     font-family: 'Centra', sans-serif !important;
     align-items: stretch;
-    color: #000;
-    text-decoration: none;
+    color: ${({ theme }) => theme.bodyTextColor};
   }
 `;
 
@@ -29,12 +26,13 @@ const Button = styled.button`
   display: flex;
   font-family: 'Centra', sans-serif !important;
   position: relative;
-  inset-inline-start: 78rem;
+  inset-inline-start: 75rem;
   border: 0;
   margin-inline-end: 1rem;
   background: transparent;
   cursor: pointer;
 `;
+
 
 const ButtonIcon = styled(Button)`
   display: flex;
@@ -127,3 +125,4 @@ export default function Navbar() {
     </>
   );
 }
+

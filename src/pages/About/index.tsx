@@ -40,7 +40,6 @@ function StyledAbout() {
     display: flex;
     block-size: 98vh;
     flex-direction: column;
-    background-color: #f1f1f1;
     padding: 20px;
     justify-content: center;
   `;

@@ -5,7 +5,6 @@ const { StyledFooter, FooterText, FooterLink } = Estilo();
 
 function Estilo() {
   const StyledFooter = styled.footer`
-  background-color: #f2f2f2;
   padding: 1rem;
   margin: -0.5rem;
   text-align: center;
@@ -16,7 +15,6 @@ function Estilo() {
 `;
 
   const FooterLink = styled.a`
-  color: #333;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
