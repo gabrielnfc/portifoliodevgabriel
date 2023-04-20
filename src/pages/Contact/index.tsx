@@ -11,7 +11,6 @@ const Title = styled.h1`
   justify-content: center;
   align-items: center;
   font-size: 45px;
-  font-family: 'Centra', sans-serif !important;
   font-weight: bold;
   text-align: center;
   margin: 5rem;
@@ -29,7 +28,6 @@ const ContactContainer = styled.div`
   p {
     text-align: center;
     font-size: 20px;
-    font-family: 'Centra', sans-serif !important;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -47,9 +45,6 @@ const Box = styled.div`
   padding: 2rem;
   margin: 1rem;
   border-radius: 5px;
-  label {
-    font-family: 'Centra', sans-serif !important;
-  }
 `;
 
 const Form = styled.form`
@@ -68,7 +63,6 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  font-family: 'Centra', sans-serif !important;
   padding: 10px;
   border-radius: 5px;
   border: none;

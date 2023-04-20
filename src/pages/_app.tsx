@@ -9,6 +9,12 @@ import PreLoader from '@/components/PreLoader/Loader';
 import { LightTheme, DarkTheme } from '@/style/themes';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Roboto } from '@next/font/google'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700']
+})
 
 export function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [isPreLoader, setIsPreLoader] = useState(true);
@@ -35,38 +41,30 @@ export function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
-        <title> Portifólio | Gabriel Nascimento </title>
+        <link rel="icon" href="/images/icon1.ico" />
+        <title> Gabriel Nascimento | Frontend Web Developer </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {isPreLoader ? (
-          <PreLoader />
-        ) : (
-          <>
-            <Navbar logo={theme.logo} />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
-            >
+      <main className={roboto.className}>
+        <ThemeProvider theme={theme} >
+          <GlobalStyle />
+          {isPreLoader ? (
+            <PreLoader />
+          ) : (
+            <>
+              <Navbar logo={theme.logo} />
               <Button>
                 <div className="switch" onClick={toggleTheme} data-isOn={isOn}>
                   <motion.div className="handle" layout transition={spring} />
                 </div>
               </Button>
-            </motion.div>
-            <Component {...pageProps} />
-            <Footer />
-          </>
-        )}
-      </ThemeProvider>
+              <Component {...pageProps} />
+              <Footer />
+            </>
+          )}
+        </ThemeProvider>
+      </main>
     </>
   );
 }
@@ -78,6 +76,32 @@ const Button = styled.div`
   inset-block-start: 1.2%;
   inset-inline-start: 93.5%;
   z-index: 11;
+  -webkit-animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          @-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
 
   .switch {
     inline-size: 3rem;

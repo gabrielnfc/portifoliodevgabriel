@@ -53,7 +53,6 @@ function StyledAbout() {
   const Title = styled.h2`
     font-size: 28px;
     font-weight: bold;
-    font-family: 'Black', sans-serif;
     margin-block-end: 10px;
     text-align: center;
   `;
@@ -61,7 +60,6 @@ function StyledAbout() {
   const Content = styled.div`
     font-size: 18px;
     line-height: 1.5;
-    font-family: 'Black', sans-serif;
     text-align: center;
 
     p {

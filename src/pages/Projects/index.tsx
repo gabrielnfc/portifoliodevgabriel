@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,7 +14,6 @@ const Container = styled.div`
 
 const TitleTitle = styled.div`
   font-size: 45px;
-  font-family: 'Centra', sans-serif !important;
   font-weight: bold;
   text-align: center;
   position: relative;
@@ -75,7 +74,6 @@ const Button = styled(motion.button)`
   position: absolute;
   inset-block-start: 3%;
   inset-inline-end: 2%;
-  font-family: 'Centra', sans-serif !important;
   font-weight: bold;
   padding: 5px 10px;
   border: 2px;

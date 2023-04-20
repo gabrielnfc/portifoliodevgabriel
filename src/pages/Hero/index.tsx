@@ -2,8 +2,13 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { Lexend } from '@next/font/google'
 
 const { Container, Slogan } = StyledHero();
+const lexend = Lexend({
+  subsets: ['latin'],
+  weight: ['400']
+})
 
 const Hero = () => {
   return (
@@ -23,7 +28,7 @@ const Hero = () => {
             whileInView={{ opacity: 1 }}
           >
             <Container>
-              <h1>Olá! Meu nome é Gabriel</h1>
+              <h1 className={lexend.className}> OLÁ, MEU NOME É  <span> GABRIEL </span> </h1>
               <Slogan>
                 <p>
                   {' '}
@@ -44,16 +49,26 @@ function StyledHero() {
     display: flex;
     block-size: 100vh;
     flex-direction: column;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 2rem;
     text-align: center;
-    padding: 1rem;
-    justify-content: center;
+    padding: 0.5rem;
+    justify-content: center;    
+    h1 {
+      font-size: 6rem;
+      padding: 0rem;
+      font-weight: bold;
+    }
+    span {
+      color: yellow;
+      text-shadow: 1px 2px 5px black;
+      font-weight: bold;
+    }
   `;
 
   const Slogan = styled.h2`
     font-size: 1.5rem;
-    margin-block-start: 2rem;
+    margin: 0.5rem;
+    position: relative;
+    inset-block-start: -5rem;
   `;
   return { Container, Slogan };
 }
