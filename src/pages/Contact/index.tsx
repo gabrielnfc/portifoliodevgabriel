@@ -45,6 +45,17 @@ const Box = styled.div`
   padding: 2rem;
   margin: 1rem;
   border-radius: 5px;
+  box-shadow:
+  1.8px 0.9px 6.7px -3px rgba(0, 0, 0, 0.07),
+  3.2px 1.6px 12.3px -3px rgba(0, 0, 0, 0.065),
+  4px 2.1px 17.6px -3px rgba(0, 0, 0, 0.06),
+  4.5px 2.3px 22.8px -3px rgba(0, 0, 0, 0.054),
+  4.8px 2.4px 27.9px -3px rgba(0, 0, 0, 0.049),
+  5px 2.5px 33.1px -3px rgba(0, 0, 0, 0.043),
+  5.5px 2.8px 38.4px -3px rgba(0, 0, 0, 0.036),
+  7.3px 3.7px 43.9px -3px rgba(0, 0, 0, 0.029),
+  12.7px 6.5px 49.9px -3px rgba(0, 0, 0, 0.022),
+  43px 22px 58px -3px rgba(0, 0, 0, 0.013);
 `;
 
 const Form = styled.form`

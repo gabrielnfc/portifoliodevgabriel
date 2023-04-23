@@ -16,5 +16,6 @@ declare module 'styled-components' {
     bodyTextColor: string; 
     logo: string;   
     backgroundImage: string;
+    color: string;
   }
 }

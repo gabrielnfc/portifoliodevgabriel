@@ -7,6 +7,7 @@ export const LightTheme: DefaultTheme = {
     bodyBackgroundColor: '#EEE',
     backgroundImage: '/images/sun-moon.svg',
     bodyTextColor: '#333',
+    color: '#333',
     padding: '0',
     margin: '0',
     logo: "/images/logob.png",

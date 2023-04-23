@@ -7,6 +7,7 @@ export const DarkTheme: DefaultTheme = {
   bodyBackgroundColor: '#333',
   backgroundImage: '/images/moon.svg',
   bodyTextColor: '#FFF',
+  color: '#FFF',
   padding: '0',
   margin: '0',
   logo: '/images/logow.png',

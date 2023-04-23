@@ -11,10 +11,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Roboto } from '@next/font/google'
 
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['100', '300', '400', '700']
 })
+
 
 export function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [isPreLoader, setIsPreLoader] = useState(true);
@@ -26,8 +28,10 @@ export function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     setIsOn(!isOn);
     const handle = document.querySelector(".handle");
     if (theme === LightTheme) {
+      //@ts-expect-error
       handle.style.backgroundImage = "url('images/sun-moon.svg')";
     } else {
+      //@ts-expect-error
       handle.style.backgroundImage = "url('images/moon.svg')";
     }
   };
@@ -75,7 +79,7 @@ const Button = styled.div`
   position: fixed;
   inset-block-start: 1.2%;
   inset-inline-start: 93.5%;
-  z-index: 11;
+  z-index: 99;
   -webkit-animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           @-webkit-keyframes slide-in-top {

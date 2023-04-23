@@ -3,7 +3,6 @@ import Hero from '@/pages/Hero';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Projects from '@/pages/Projects';
-import React from 'react';
 
 const Home: NextPage = () => {
 

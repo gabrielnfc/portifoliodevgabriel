@@ -12,7 +12,7 @@ const Nav = styled.div`
   margin: -0.5rem;
   background-color: ${({ theme }) => theme.bodyBackgroundColor};
   box-shadow: 0 0.5px 5px 0 rgba(0, 0, 0, 0.37);
-  z-index: 10;
+  z-index: 99;
   a {
     font-size: 16px;
     align-items: stretch;
@@ -72,7 +72,7 @@ const ButtonIcon = styled(Button)`
 
 
 
-
+//@ts-ignore
 export default function Navbar({ logo }) {
   return (
     <>
@@ -108,8 +108,8 @@ export default function Navbar({ logo }) {
           <Button>
             <motion.a
               whileHover={{ scale: 1.2 }}
-              onHoverStart={e => { }}
-              onHoverEnd={e => { }}
+              onHoverStart={() => { }}
+              onHoverEnd={() => { }}
             >
               <Link
                 activeClass="active"
