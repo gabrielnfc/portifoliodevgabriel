@@ -5,7 +5,6 @@ import Contact from '@/pages/Contact';
 import Projects from '@/pages/Projects';
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Hero />

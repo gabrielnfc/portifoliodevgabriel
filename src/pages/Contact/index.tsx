@@ -1,37 +1,41 @@
 'use client';
-import React from 'react';
+import emailjs from '@emailjs/browser';
+import { Lexend } from '@next/font/google';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import styled from 'styled-components';
-import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
+
+const lexend = Lexend({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+const ContactContainer = styled.div`
+  display: flex;
+  block-size: 96vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  p {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+  }
+`;
 
 const Title = styled.h1`
   display: flex;
   position: relative;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
-  margin: 5rem;
-  inset-block-start: 1rem;
-`;
-
-const ContactContainer = styled.div`
-  display: flex;
-  block-size: 89vh;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
-  position: relative;
-  p {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    inset-block-start: -2rem;
+  margin: 4rem;
+  inset-block-start: 3.8rem;
+  span {
+    color: #e8314f;
   }
 `;
 
@@ -40,68 +44,79 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #bdbdbd;
-  inset-block-start: -4rem;
+  background-image: url('/images/bgpattern1.png');
+  inset-block-start: 1rem;
   padding: 2rem;
-  margin: 1rem;
+  margin: 0rem;
   border-radius: 5px;
-  box-shadow:
-  1.8px 0.9px 6.7px -3px rgba(0, 0, 0, 0.07),
-  3.2px 1.6px 12.3px -3px rgba(0, 0, 0, 0.065),
-  4px 2.1px 17.6px -3px rgba(0, 0, 0, 0.06),
-  4.5px 2.3px 22.8px -3px rgba(0, 0, 0, 0.054),
-  4.8px 2.4px 27.9px -3px rgba(0, 0, 0, 0.049),
-  5px 2.5px 33.1px -3px rgba(0, 0, 0, 0.043),
-  5.5px 2.8px 38.4px -3px rgba(0, 0, 0, 0.036),
-  7.3px 3.7px 43.9px -3px rgba(0, 0, 0, 0.029),
-  12.7px 6.5px 49.9px -3px rgba(0, 0, 0, 0.022),
-  43px 22px 58px -3px rgba(0, 0, 0, 0.013);
+  box-shadow: 1.8px 0.9px 6.7px -3px rgba(0, 0, 0, 0.07),
+    3.2px 1.6px 12.3px -3px rgba(0, 0, 0, 0.065),
+    4px 2.1px 17.6px -3px rgba(0, 0, 0, 0.06),
+    4.5px 2.3px 22.8px -3px rgba(0, 0, 0, 0.054),
+    4.8px 2.4px 27.9px -3px rgba(0, 0, 0, 0.049),
+    5px 2.5px 33.1px -3px rgba(0, 0, 0, 0.043),
+    5.5px 2.8px 38.4px -3px rgba(0, 0, 0, 0.036),
+    7.3px 3.7px 43.9px -3px rgba(0, 0, 0, 0.029),
+    12.7px 6.5px 49.9px -3px rgba(0, 0, 0, 0.022),
+    43px 22px 58px -3px rgba(0, 0, 0, 0.013);
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  inline-size: 600px;
+  font-size: larger;
+  inline-size: 40rem;
+  block-size: 35rem;
   max-inline-size: 100%;
   max-block-size: 100%;
 `;
 
 const Label = styled.label`
-  margin-block-end: 5px;
-  font-weight: bold;
-  color: #2b2b2b;
+  margin-block-end: 0.2rem;
+  color: ${({ theme }) => theme.bodyTextColor};
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: 1rem;
   border-radius: 5px;
   border: none;
-  margin-block-end: 10px;
+  margin-block-end: 0.4rem;
 `;
 
 const TextArea = styled.textarea`
-  padding: 2rem;
-  border-radius: 5px;
+  inline-size: 38rem;
+  block-size: 35rem;
+  font-size: large;
   border: none;
-  margin-block-end: 1rem;
-  max-inline-size: 100%;
-  max-block-size: 350px;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-block-end: 0.8rem;
+  max-inline-size: 38rem;
+  max-block-size: 100%;
+  ::placeholder {
+    text-align: center;
+    position: relative;
+    inset-block-start: 6rem;
+  }
 `;
 
 const Button = styled.button`
   inline-size: 120px;
-  block-size: 40px;
+  block-size: 6rem;
   border: none;
   border-radius: 5px;
-  background-color: #1e90ff;
+  background-color: #e8314f;
   color: #fff;
-  font-size: 16px;
-
+  font-size: 21px;
   cursor: pointer;
+`;
 
-  &:hover {
-    background-color: #007bff;
+const Lastmessage = styled.div`
+  display: flex;
+  position: relative;
+  inset-block-start: 1.3rem;
+  p {
+    font-size: 20px;
   }
 `;
 
@@ -147,13 +162,12 @@ function Contact(): JSX.Element {
 
   return (
     <>
-      <section id="Contact">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-        >
+      <section id="Contact" className={lexend.className}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
           <ContactContainer>
-            <Title> Deixe aqui a sua mensagem </Title>
+            <Title>
+              Deixe aqui a sua <span>mensagem</span>
+            </Title>
             <Box>
               <Form onSubmit={sendEmail}>
                 <Label htmlFor="name">Nome</Label>
@@ -198,15 +212,16 @@ function Contact(): JSX.Element {
                   value={message}
                   required
                 />
-
                 <Button type="submit">Enviar</Button>
               </Form>
             </Box>
-            <p>
-              {' '}
-              Se você tem uma pergunta ou apenas quer dizer "Oi", <br></br>farei o
-              possível para entrar em contato com você!{' '}
-            </p>
+            <Lastmessage>
+              <p>
+                {' '}
+                Se você tem uma pergunta ou apenas quer dizer "Oi", <br />
+                farei o possível para entrar em contato com você!{' '}
+              </p>
+            </Lastmessage>
           </ContactContainer>
         </motion.div>
       </section>

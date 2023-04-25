@@ -1,12 +1,14 @@
 'use client';
+import { Button } from '@mui/material';
 import { Lexend } from '@next/font/google';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 import styled from 'styled-components';
 
 const lexend = Lexend({
   subsets: ['latin'],
-  weight: ['400']
-})
+  weight: ['400'],
+});
 
 const Hero = () => {
   return (
@@ -17,42 +19,109 @@ const Hero = () => {
         transition={{
           duration: 0.8,
           delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01]
+          ease: [0, 0.71, 0.2, 1.01],
         }}
       >
         <section id="Home">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
             <Container>
-              <h1 className={lexend.className}> OLÁ, MEU NOME É  <span> GABRIEL </span> </h1>
-              <Slogan>
+              <h1 className={lexend.className}>
+                {' '}
+                OLÁ, MEU NOME É <span> GABRIEL </span>{' '}
+              </h1>
+              <Slogan className={lexend.className}>
                 <p>
                   {' '}
-                  Desenvolvedor Front-end apaixonado por criar interfaces incríveis{' '}
+                  Desenvolvedor Frontend apaixonado por criar interfaces
+                  incríveis,
+                  <br /> elevando o nível do seu produto ou negócio!{' '}
                 </p>
               </Slogan>
-              <Barras>
-                <Barra1>
-                  <img src='/images/retan1.png'></img>
-                </Barra1>
-                <Barra2>
-                  <img src='/images/retan2.png'></img>
-                </Barra2>
-                <Barra3>
-                  <img src='/images/retan3.png'></img>
-                </Barra3>
-                <Barra4>
-                  <img src='/images/retan4.png'></img>
-                </Barra4>
-                <Barra5>
-                  <img src='/images/retan5.png'></img>
-                </Barra5>
-                <Barra6>
-                  <img src='/images/retan6.png'></img>
-                </Barra6>
-              </Barras>
+              <Social>
+                <Button
+                  className="btn"
+                  href="https://github.com/gabrielnfc"
+                  target="_black"
+                >
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
+                  >
+                    <img src="/images/github.ico" alt="Github" />
+                  </motion.a>
+                </Button>
+                <Button
+                  className="btn"
+                  href="https://www.linkedin.com/in/gabrielnfc/"
+                  target="_black"
+                >
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
+                  >
+                    <img src="/images/Linkedin.ico" alt="Linkedin" />
+                  </motion.a>
+                </Button>
+                <Button
+                  className="btn"
+                  href="https://www.instagram.com/gabrielnfc/"
+                  target="_black"
+                >
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
+                  >
+                    <img src="/images/instagram.ico" alt="Instagram" />
+                  </motion.a>
+                </Button>
+                <Button
+                  className="btn"
+                  href="https://twitter.com/gabrielnfc"
+                  target="_black"
+                >
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
+                  >
+                    <img src="/images/twitter.ico" alt="Twitter" />
+                  </motion.a>
+                </Button>
+                <Button
+                  className="btn"
+                  href="https://api.whatsapp.com/qr/GFEOWFFQFLEZI1?autoload=1&app_absent=0"
+                  target="_black"
+                >
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={() => {}}
+                    onHoverEnd={() => {}}
+                  >
+                    <img src="/images/whatsapp.ico" alt="Whatsapp" />
+                  </motion.a>
+                </Button>
+              </Social>
+              <Down>
+                <Link
+                  activeClass="active"
+                  to="About"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                >
+                  <div className="container">
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                    <span className="text"></span>
+                    <a className="text" href="https://naegele.it"></a>
+                  </div>
+                </Link>
+              </Down>
             </Container>
           </motion.div>
         </section>
@@ -63,236 +132,225 @@ const Hero = () => {
 
 export default Hero;
 
-
 const Container = styled.div`
-    display: flex;
-    position: relative;
-    block-size: 100vh;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    h1 {
-      font-size: 6rem;
-      position: absolute;
-      padding: 3rem;
-      font-weight: bold;
-      text-shadow: 1px 2px 5px black;
-      background-color: #4158D0;
-background-image: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-background-image: -moz-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-background-image: -o-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    }     
-  `;
+  display: flex;
+  position: relative;
+  block-size: 100vh;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/bgpattern1.png');
+  background-attachment: fixed;
+  margin: -0.5rem;
+  padding: 0.2rem;
+  h1 {
+    font-size: 6rem;
+    position: absolute;
+    padding: 2rem;
+    inset-block-start: 16rem;
+    font-weight: bold;
+    text-shadow: 1px 2px 2px black;
+    -webkit-animation: tracking-in-expand 2.3s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 2.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    @-webkit-keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  span {
+    color: #e8314f;
+  }
+`;
 
 const Slogan = styled.h2`
-display: flex;
-position: relative;
-font-size: 1.5rem;
-margin: 0.5rem;
-position: relative;
-inset-block-start: 32rem;
-`;
-
-const Barras = styled.div`
   display: flex;
-  flex-direction: row;
   position: relative;
-  inline-size: 90vw;
-  block-size: 90vh;
-  inset-block-start: -1rem;
-  z-index: -1;  
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem;
+  position: relative;
+  inset-block-start: 8rem;
+  -webkit-animation: tracking-in-expand 2.3s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 2.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
-const Barra1 = styled.div`
+const Down = styled.div`
   display: flex;
-  inline-size: 10px;
-  -webkit-animation: slide-in-bl 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-bl 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  @-webkit-keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-  @keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-  `;
+  position: relative;
+  inset-block-start: 16rem;
+  cursor: pointer;
 
-const Barra2 = styled.div`
-  display: flex;
-  inline-size: 10px;   
-  -webkit-animation: slide-in-bl 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-bl 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          
-@-webkit-keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
+  .container {
+    position: relative;
+    inline-size: 24px;
+    block-size: 24px;
+  }
+
+  .chevron {
+    position: absolute;
+    inline-size: 50px;
+    block-size: 8px;
     opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
   }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
+
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
   }
-}
-@keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
+
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
   }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
+
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    inset-block-start: 0;
+    block-size: 100%;
+    inline-size: 51%;
+    background: #e8314f;
   }
-}
+
+  .chevron:before {
+    inset-inline-start: 0;
+    transform: skew(0deg, 30deg);
+  }
+
+  .chevron:after {
+    inset-inline-end: 0;
+    inline-size: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  .text {
+    display: block;
+    margin-block-start: 75px;
+    margin-inline-start: -30px;
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0.25;
+    animation: pulse 2s linear alternate infinite;
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
-const Barra3 = styled.div`
+const Social = styled.div`
   display: flex;
-  inline-size: 10px;
-  -webkit-animation: slide-in-bl 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-bl 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  @-webkit-keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
+  position: relative;
+  justify-content: space-around;
+  inset-block-start: 9rem;
+  padding: 1rem;
+  img {
+    inline-size: 50px;
+    block-size: 50px;
+    border-radius: 50%;
   }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
+  .btn {
+    &:hover {
+      background-color: transparent;
+    }
   }
-}
-  @keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-  `;
+  -webkit-animation: scale-in-hor-center 1.5s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-hor-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-const Barra4 = styled.div`
-  display: flex;
-  inline-size: 10px;
-  -webkit-animation: slide-in-bl 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-bl 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  @-webkit-keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
+  @-webkit-keyframes scale-in-hor-center {
+    0% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
+  @keyframes scale-in-hor-center {
+    0% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      opacity: 1;
+    }
   }
-}
-  @keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
 `;
-
-const Barra5 = styled.div`
-  display: flex;
-  inline-size: 10px;
-  -webkit-animation: slide-in-bl 2.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	animation: slide-in-bl 2.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  @-webkit-keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-  @keyframes slide-in-bl {
-  0% {
-    -webkit-transform: translateY(1000px) translateX(-1000px);
-            transform: translateY(1000px) translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0) translateX(0);
-            transform: translateY(0) translateX(0);
-    opacity: 1;
-  }
-}
-  `;
-
-const Barra6 = styled.div`
-display: flex;
-position: relative;
-inline-size: 10px;
-inset-inline-start: -0.8rem;
--webkit-animation: slide-in-bl 2.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-animation: slide-in-bl 2.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-
-@-webkit-keyframes slide-in-bl {
-0% {
-  -webkit-transform: translateY(1000px) translateX(-1000px);
-          transform: translateY(1000px) translateX(-1000px);
-  opacity: 0;
-}
-100% {
-  -webkit-transform: translateY(0) translateX(0);
-          transform: translateY(0) translateX(0);
-  opacity: 1;
-}
-}
-@keyframes slide-in-bl {
-0% {
-  -webkit-transform: translateY(1000px) translateX(-1000px);
-          transform: translateY(1000px) translateX(-1000px);
-  opacity: 0;
-}
-100% {
-  -webkit-transform: translateY(0) translateX(0);
-          transform: translateY(0) translateX(0);
-  opacity: 1;
-}
-}
-`;
-
-
