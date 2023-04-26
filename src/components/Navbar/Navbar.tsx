@@ -70,11 +70,11 @@ const Button = styled.button`
 const ButtonIcon = styled(Button)`
   display: flex;
   position: relative;
-  inset-inline-start: 0rem;
+  inset-inline-start: 1rem;
   z-index: 99;
   border: 0;
   img {
-    inline-size: 12rem;
+    inline-size: 10rem;
     background: transparent;
     cursor: pointer;
   }

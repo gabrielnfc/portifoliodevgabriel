@@ -118,7 +118,9 @@ const Hero = () => {
                     <div className="chevron"></div>
                     <div className="chevron"></div>
                     <span className="text"></span>
-                    <a className="text" href="https://naegele.it"></a>
+                    <a className="text" href="https://naegele.it">
+                      Saiba mais
+                    </a>
                   </div>
                 </Link>
               </Down>
@@ -226,6 +228,9 @@ const Down = styled.div`
   position: relative;
   inset-block-start: 16rem;
   cursor: pointer;
+  a {
+    text-decoration: none;
+  }
 
   .container {
     position: relative;
@@ -237,6 +242,7 @@ const Down = styled.div`
     position: absolute;
     inline-size: 50px;
     block-size: 8px;
+    inset-block-start: 1rem;
     opacity: 0;
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move 3s ease-out infinite;
@@ -291,11 +297,11 @@ const Down = styled.div`
 
   .text {
     display: block;
-    margin-block-start: 75px;
-    margin-inline-start: -30px;
+    margin-block-start: 80px;
+    margin-inline-start: -10px;
     font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
     font-size: 12px;
-    color: #fff;
+    color: ${({ theme }) => theme.bodyTextColor};
     text-transform: uppercase;
     white-space: nowrap;
     opacity: 0.25;
