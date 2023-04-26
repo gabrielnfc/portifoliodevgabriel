@@ -29,7 +29,7 @@ const TitleTitle = styled.div`
   font-weight: bold;
   text-align: center;
   position: relative;
-  inset-block-start: 8rem;
+  inset-block-start: 6.5rem;
   justify-content: center;
   z-index: 1;
   font-weight: bold;
@@ -41,23 +41,33 @@ const TitleTitle = styled.div`
 `;
 
 const Item = styled(motion.div)`
-  inline-size: calc(95% - 2rem);
-  block-size: calc(95% - 2rem);
   position: relative;
   padding: 2rem;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0.2px 0.2px 2px;
-  background-color: #e8314fce;
+  transition-delay: 1ms;
   z-index: ${({ isSelected }) => (isSelected ? '1' : '-1')};
-  inline-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
-  block-size: ${({ isSelected }) => (isSelected ? '70%' : 'calc(80% - 1rem)')};
+  inline-size: ${({ isSelected }) => (isSelected ? '60%' : 'calc(60% - 2rem)')};
+  block-size: ${({ isSelected }) => (isSelected ? '60%' : 'calc(60% - 1rem)')};
   position: ${({ isSelected }) => (isSelected ? 'fixed' : 'relative')};
-  inset-block-start: ${({ isSelected }) => (isSelected ? '10%' : '50px')};
-  inset-inline-start: ${({ isSelected }) => (isSelected ? '9%' : 'auto')};
+  inset-block-start: ${({ isSelected }) => (isSelected ? '10%' : '10px')};
+  inset-inline-start: ${({ isSelected }) => (isSelected ? '10%' : 'auto')};
   margin: ${({ isSelected }) => (isSelected ? '3%' : 'none')};
-  &:hover {
-    box-shadow: 0.2px 0.2px 5px;
+
+  .imgnoselect {
+    display: flex;
+    position: relative;
+    inline-size: 400px;
+    inset-block-end: 3rem;
+    inset-inline-start: 2rem;
+  }
+
+  .imgselect {
+    display: flex;
+    position: relative;
+    inline-size: 1090px;
+    inset-block-end: 5rem;
+    inset-inline-start: 5rem;
   }
 `;
 
@@ -73,17 +83,25 @@ const ProjectContainer = styled.div`
   grid-template-columns: 2fr 2fr 2fr;
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(5px);
+  transition-delay: 2ms;
   ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
 `;
 
 const Subtitle = styled(motion.h5)`
   margin: 0;
   font-size: 14px;
+  text-align: center;
+  position: relative;
+  inset-block-start: 1.5rem;
+  inset-inline-start: 7rem;
 `;
 
 const Title = styled(motion.h2)`
-  margin: 5px 0 0;
   font-size: 24px;
+  text-align: center;
+  position: relative;
+  inset-block-start: -3rem;
+  inset-inline-start: 6.5rem;
 `;
 
 const Button = styled(motion.button)`
@@ -94,8 +112,8 @@ const Button = styled(motion.button)`
   border: 2px;
   border-radius: 5px;
   margin-block-end: 10px;
-  color: ${({ theme }) => theme.bodyTextColor};
-  background-color: ${({ theme }) => theme.bodyBackgroundColor};
+  color: #fff;
+  background-color: #e8314f;
   cursor: pointer;
 `;
 
@@ -130,17 +148,24 @@ const Project = () => {
             </TitleTitle>
             <ProjectContainer isBlurActive={isBlurActive}>
               {items.map((item) => (
-                <Item
-                  key={item.id}
-                  layoutId={item.id}
-                  isSelected={selectedId === item.id}
-                  onClick={() => setSelectedId(item.id)}
+                <motion.a
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={() => {}}
+                  onHoverEnd={() => {}}
                 >
-                  <Subtitle className={lexend.className}>
-                    {item.subtitle}
-                  </Subtitle>
-                  <Title className={lexend.className}>{item.title}</Title>
-                </Item>
+                  <Item
+                    key={item.id}
+                    layoutId={item.id}
+                    isSelected={selectedId === item.id}
+                    onClick={() => setSelectedId(item.id)}
+                  >
+                    <Subtitle className={lexend.className}>
+                      {item.subtitle}
+                    </Subtitle>
+                    <Title className={lexend.className}>{item.title}</Title>
+                    <img className="imgnoselect" src="/images/macbook.png" />
+                  </Item>
+                </motion.a>
               ))}
             </ProjectContainer>
             <AnimatePresence>
@@ -149,7 +174,7 @@ const Project = () => {
                   key={selectedId}
                   layoutId={selectedId}
                   isSelected={true}
-                  initial={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 1, scale: 1 }}
                   whileHover={{ scale: 1 }}
@@ -162,6 +187,7 @@ const Project = () => {
                   <Title className={lexend.className}>
                     {items[selectedId - 1].title}
                   </Title>
+                  <img className="imgselect" src="/images/macbook.png" />
                   <Button onClick={() => setSelectedId(null)}>x</Button>
                 </Item>
               )}
