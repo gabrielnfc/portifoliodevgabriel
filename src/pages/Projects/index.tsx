@@ -15,8 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   inline-size: 98.8vw;
   block-size: 105vh;
-  margin: -0.5rem;
-  padding: 0.2rem;
+  margin: -0.3rem;
   justify-items: center;
   align-items: center;
   background-image: url('/images/bgpattern1.png');
@@ -33,58 +32,83 @@ const TitleTitle = styled.div`
   justify-content: center;
   z-index: 1;
   font-weight: bold;
+  transition-delay: 20ms;
   text-shadow: 1px 1px 0px #0000008d;
-  ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
+  ${({ isBlurActive }) => isBlurActive && 'filter: blur(50px);'}
   span {
     color: #e8314f;
   }
 `;
 
 const Item = styled(motion.div)`
+  display: grid;
   position: relative;
-  padding: 2rem;
   border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
   transition-delay: 1ms;
   z-index: ${({ isSelected }) => (isSelected ? '1' : '-1')};
-  inline-size: ${({ isSelected }) => (isSelected ? '60%' : 'calc(60% - 2rem)')};
-  block-size: ${({ isSelected }) => (isSelected ? '60%' : 'calc(60% - 1rem)')};
+  inline-size: ${({ isSelected }) =>
+    isSelected ? '50%' : 'calc(100% - 2rem)'};
+  block-size: ${({ isSelected }) =>
+    isSelected ? '79%' : 'calc(20rem - 1rem)'};
+  max-inline-size: ${({ isSelected }) => (isSelected ? '100vw' : '100vw')};
   position: ${({ isSelected }) => (isSelected ? 'fixed' : 'relative')};
-  inset-block-start: ${({ isSelected }) => (isSelected ? '10%' : '10px')};
-  inset-inline-start: ${({ isSelected }) => (isSelected ? '10%' : 'auto')};
-  margin: ${({ isSelected }) => (isSelected ? '3%' : 'none')};
+  inset-block-start: ${({ isSelected }) => (isSelected ? '8%' : '5rem')};
+  margin: ${({ isSelected }) => (isSelected ? '2rem' : '0')};
+  padding: ${({ isSelected }) => (isSelected ? '2rem' : '0')};
+  background-image: ${({ isSelected, Imageselect }) =>
+    isSelected ? `url(${Imageselect})` : 'none'};
+  background-size: 940px 580px;
+  background-repeat: no-repeat;
+  background-position: center;
 
   .imgnoselect {
     display: flex;
     position: relative;
     inline-size: 400px;
-    inset-block-end: 3rem;
-    inset-inline-start: 2rem;
+    inset-block-end: 18rem;
+    border-radius: 50px;
+    z-index: 20;
+    &:hover {
+      transform: scaleX(102%);
+      transform: scaleY(102%);
+    }
   }
 
   .imgselect {
     display: flex;
     position: relative;
-    inline-size: 1090px;
-    inset-block-end: 5rem;
-    inset-inline-start: 5rem;
+    inline-size: 1200px;
+    inset-block-end: 7rem;
+    z-index: 20;
   }
 `;
 
 const ProjectContainer = styled.div`
   display: flex;
+  inline-size: 85vw;
+  block-size: 86vh;
+  max-inline-size: 90vw;
+  max-block-size: 86vh;
   position: relative;
   display: grid;
-  inset-block-start: 4rem;
   align-items: center;
   justify-items: center;
-  inline-size: 100%;
-  block-size: 70%;
   grid-template-columns: 2fr 2fr 2fr;
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(5px);
   transition-delay: 2ms;
-  ${({ isBlurActive }) => isBlurActive && 'filter: blur(5px);'}
+  ${({ isBlurActive }) => isBlurActive && 'filter: blur(50px);'}
+`;
+
+const Title = styled(motion.h2)`
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  inset-block-start: -5rem;
 `;
 
 const Subtitle = styled(motion.h5)`
@@ -92,16 +116,19 @@ const Subtitle = styled(motion.h5)`
   font-size: 14px;
   text-align: center;
   position: relative;
-  inset-block-start: 1.5rem;
-  inset-inline-start: 7rem;
 `;
 
-const Title = styled(motion.h2)`
-  font-size: 24px;
-  text-align: center;
+const Projectimg = styled(motion.div)`
+  display: flex;
   position: relative;
-  inset-block-start: -3rem;
-  inset-inline-start: 6.5rem;
+  justify-content: center;
+  inset-block-end: 4rem;
+  z-index: -1;
+
+  img {
+    inline-size: 300px;
+    block-size: 192px;
+  }
 `;
 
 const Button = styled(motion.button)`
@@ -118,12 +145,48 @@ const Button = styled(motion.button)`
 `;
 
 const items = [
-  { id: 1, subtitle: 'Project subtitle 1', title: 'Project title 1' },
-  { id: 2, subtitle: 'Project subtitle 2', title: 'Project title 2' },
-  { id: 3, subtitle: 'Project subtitle 3', title: 'Project title 3' },
-  { id: 4, subtitle: 'Project subtitle 4', title: 'Project title 4' },
-  { id: 5, subtitle: 'Project subtitle 5', title: 'Project title 5' },
-  { id: 6, subtitle: 'Project subtitle 6', title: 'Project title 6' },
+  {
+    id: 1,
+    title: 'Diamante do Mar',
+    subtitle: 'moda praia',
+    image: '/images/diamantedomar.png',
+    Imageselect: '/images/diamantedomar.png',
+  },
+  {
+    id: 2,
+    title: 'Em desenvolvimento',
+    subtitle: 'em breve',
+    image: '/images/bgdesenvolvimento.png',
+    Imageselect: '/images/bgdesenvolvimento2.png',
+  },
+  {
+    id: 3,
+    title: 'Em desenvolvimento',
+    subtitle: 'em breve',
+    image: '/images/bgdesenvolvimento.png',
+    Imageselect: '/images/bgdesenvolvimento2.png',
+  },
+  {
+    id: 4,
+    title: 'Em desenvolvimento',
+    subtitle: 'em breve',
+    image: '/images/bgdesenvolvimento.png',
+    Imageselect: '/images/bgdesenvolvimento2.png',
+  },
+  {
+    id: 5,
+    title: 'Em desenvolvimento',
+    subtitle: 'em breve',
+    image: '/images/bgdesenvolvimento.png',
+    Imageselect: '/images/bgdesenvolvimento2.png',
+  },
+  {
+    id: 6,
+    title: 'Em desenvolvimento',
+    subtitle: 'em breve',
+    image: '/images/bgdesenvolvimento.png',
+    Imageselect: '/images/bgdesenvolvimento2.png',
+  },
 ];
 
 const Project = () => {
@@ -132,13 +195,10 @@ const Project = () => {
 
   return (
     <>
-      <section id="Projects">
+      <section id="Projects" className={lexend.className}>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
           <Container>
-            <TitleTitle
-              isBlurActive={isBlurActive}
-              className={lexend.className}
-            >
+            <TitleTitle isBlurActive={isBlurActive}>
               {' '}
               <p>
                 {' '}
@@ -148,24 +208,19 @@ const Project = () => {
             </TitleTitle>
             <ProjectContainer isBlurActive={isBlurActive}>
               {items.map((item) => (
-                <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  onHoverStart={() => {}}
-                  onHoverEnd={() => {}}
+                <Item
+                  key={item.id}
+                  layoutId={item.id}
+                  isSelected={selectedId === item.id}
+                  onClick={() => setSelectedId(item.id)}
                 >
-                  <Item
-                    key={item.id}
-                    layoutId={item.id}
-                    isSelected={selectedId === item.id}
-                    onClick={() => setSelectedId(item.id)}
-                  >
-                    <Subtitle className={lexend.className}>
-                      {item.subtitle}
-                    </Subtitle>
-                    <Title className={lexend.className}>{item.title}</Title>
-                    <img className="imgnoselect" src="/images/macbook.png" />
-                  </Item>
-                </motion.a>
+                  <Subtitle>{item.subtitle}</Subtitle>
+                  <Title>{item.title}</Title>
+                  <Projectimg>
+                    <img src={item.image} />
+                  </Projectimg>
+                  <img className="imgnoselect" src="/images/macbook.png" />
+                </Item>
               ))}
             </ProjectContainer>
             <AnimatePresence>
@@ -174,19 +229,16 @@ const Project = () => {
                   key={selectedId}
                   layoutId={selectedId}
                   isSelected={true}
-                  initial={{ opacity: 0, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 1, scale: 1 }}
                   whileHover={{ scale: 1 }}
-                  transition={{ type: 'spring', stiffness: 60, damping: 10 }}
+                  transition={{ type: 'spring', stiffness: 1200, damping: 100 }}
                   onClick={() => setSelectedId(null)}
+                  Imageselect={items[selectedId - 1].Imageselect}
                 >
-                  <Subtitle className={lexend.className}>
-                    {items[selectedId - 1].subtitle}
-                  </Subtitle>
-                  <Title className={lexend.className}>
-                    {items[selectedId - 1].title}
-                  </Title>
+                  <Subtitle>{items[selectedId - 1].subtitle}</Subtitle>
+                  <Title>{items[selectedId - 1].title}</Title>
                   <img className="imgselect" src="/images/macbook.png" />
                   <Button onClick={() => setSelectedId(null)}>x</Button>
                 </Item>

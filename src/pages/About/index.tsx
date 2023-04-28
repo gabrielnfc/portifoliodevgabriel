@@ -21,7 +21,8 @@ const AboutContainer = styled.div`
   div.btncv {
     display: flex;
     position: relative;
-    inset-block-end: 9rem;
+    inline-size: 11rem;
+    inset-block-end: 8rem;
   }
 
   .btn {
@@ -222,7 +223,7 @@ function About() {
                 desenvolvimento e programação da Web.
                 <br />
                 <br />
-                Estou aberto a <span>oportunidades de trabalho</span> eu onde
+                Estou aberto a <span>oportunidades de trabalho</span> onde eu
                 possa contribuir, aprender e crescer. Se você tiver uma boa
                 oportunidade que corresponda às minhas habilidades e
                 experiências, não hesite em entrar em <span>contato</span>{' '}
@@ -237,105 +238,90 @@ function About() {
                 <h1>Minhas habilidades</h1>
                 <div className="gridskills">
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">html</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">CSS</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">JavaScript</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">React</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Typescript</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Tailwind</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">NextJs</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Vite</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">VueJs</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Git</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">GitHub</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Vercel</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Figma</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
                     <div className="skillsbuttons">Responsividade</div>
                   </motion.div>
                   <motion.div
-                    className="box"
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: 'spring', stiffness: 400, damping: 10 }}
                   >
