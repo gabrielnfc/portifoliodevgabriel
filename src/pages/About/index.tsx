@@ -209,7 +209,7 @@ function About() {
             </Subtitle2>
             <Content>
               <p>
-                Sou um <span>Desenvolvedor Frontend</span> e contruo interfaces
+                Sou um <span>Desenvolvedor Frontend</span> e construo interfaces
                 de Sites e Aplicações Web que leva ao sucesso do produto ou
                 negócio como um todo. Confira alguns dos meus trabalhos na seção{' '}
                 <span>Projetos</span>
