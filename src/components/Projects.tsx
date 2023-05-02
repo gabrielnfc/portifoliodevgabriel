@@ -18,7 +18,7 @@ const Container = styled.div`
   margin: -0.3rem;
   justify-items: center;
   align-items: center;
-  background-image: url('/images/bgpattern1.png');
+  background-image: url('https://i.imgur.com/1Td9VOt.png');
   background-attachment: fixed;
   background-size: 100% 100%;
 `;
@@ -155,35 +155,35 @@ const items = [
   {
     id: 2,
     title: 'Em desenvolvimento',
-    subtitle: 'em breve',
+    subtitle: ' - ',
     image: 'https://i.imgur.com/kznZ188.png',
     Imageselect: 'https://i.imgur.com/A8y4Hg5.png',
   },
   {
     id: 3,
     title: 'Em desenvolvimento',
-    subtitle: 'em breve',
+    subtitle: ' - ',
     image: 'https://i.imgur.com/kznZ188.png',
     Imageselect: 'https://i.imgur.com/A8y4Hg5.png',
   },
   {
     id: 4,
     title: 'Em desenvolvimento',
-    subtitle: 'em breve',
+    subtitle: ' - ',
     image: 'https://i.imgur.com/kznZ188.png',
     Imageselect: 'https://i.imgur.com/A8y4Hg5.png',
   },
   {
     id: 5,
     title: 'Em desenvolvimento',
-    subtitle: 'em breve',
+    subtitle: ' - ',
     image: 'https://i.imgur.com/kznZ188.png',
     Imageselect: 'https://i.imgur.com/A8y4Hg5.png',
   },
   {
     id: 6,
     title: 'Em desenvolvimento',
-    subtitle: 'em breve',
+    subtitle: ' - ',
     image: 'https://i.imgur.com/kznZ188.png',
     Imageselect: 'https://i.imgur.com/A8y4Hg5.png',
   },

@@ -33,7 +33,7 @@ const Title = styled.h1`
   font-weight: bold;
   text-align: center;
   margin: 2rem;
-  inset-block-start: 4rem;
+  inset-block-start: 4.5rem;
   span {
     color: #e8314f;
   }

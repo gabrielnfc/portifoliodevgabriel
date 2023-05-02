@@ -48,7 +48,7 @@ const Hero = () => {
                     onHoverStart={() => {}}
                     onHoverEnd={() => {}}
                   >
-                    <img src="/images/github.ico" alt="Github" />
+                    <img src="https://i.imgur.com/QzrfM2S.png" alt="Github" />
                   </motion.a>
                 </Button>
                 <Button
@@ -61,7 +61,7 @@ const Hero = () => {
                     onHoverStart={() => {}}
                     onHoverEnd={() => {}}
                   >
-                    <img src="/images/Linkedin.ico" alt="Linkedin" />
+                    <img src="https://i.imgur.com/yfA5Xw1.png" alt="Linkedin" />
                   </motion.a>
                 </Button>
                 <Button
@@ -74,7 +74,10 @@ const Hero = () => {
                     onHoverStart={() => {}}
                     onHoverEnd={() => {}}
                   >
-                    <img src="/images/instagram.ico" alt="Instagram" />
+                    <img
+                      src="https://i.imgur.com/3F0QjnG.png"
+                      alt="Instagram"
+                    />
                   </motion.a>
                 </Button>
                 <Button
@@ -87,7 +90,7 @@ const Hero = () => {
                     onHoverStart={() => {}}
                     onHoverEnd={() => {}}
                   >
-                    <img src="/images/twitter.ico" alt="Twitter" />
+                    <img src="https://i.imgur.com/UxEYKD8.png" alt="Twitter" />
                   </motion.a>
                 </Button>
                 <Button
@@ -100,7 +103,7 @@ const Hero = () => {
                     onHoverStart={() => {}}
                     onHoverEnd={() => {}}
                   >
-                    <img src="/images/whatsapp.ico" alt="Whatsapp" />
+                    <img src="https://i.imgur.com/RwKLCHS.png" alt="Whatsapp" />
                   </motion.a>
                 </Button>
               </Social>
@@ -148,9 +151,9 @@ const Container = styled.div`
   padding: 0.2rem;
   h1 {
     font-size: 6rem;
-    position: absolute;
+    position: relative;
     padding: 2rem;
-    inset-block-start: 16rem;
+    inset-block-start: 4rem;
     font-weight: bold;
     text-shadow: 1px 2px 2px black;
     -webkit-animation: tracking-in-expand 2.3s
@@ -192,8 +195,7 @@ const Slogan = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.5rem;
-  position: relative;
-  inset-block-start: 8rem;
+  inset-block-start: -4rem;
   -webkit-animation: tracking-in-expand 2.3s cubic-bezier(0.215, 0.61, 0.355, 1)
     both;
   animation: tracking-in-expand 2.3s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -226,7 +228,7 @@ const Slogan = styled.h2`
 const Down = styled.div`
   display: flex;
   position: relative;
-  inset-block-start: 16rem;
+  inset-block-start: 4rem;
   cursor: pointer;
   a {
     text-decoration: none;
@@ -319,7 +321,7 @@ const Social = styled.div`
   display: flex;
   position: relative;
   justify-content: space-around;
-  inset-block-start: 9rem;
+  inset-block-start: -5rem;
   padding: 1rem;
   img {
     inline-size: 50px;

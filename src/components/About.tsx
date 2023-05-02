@@ -115,7 +115,7 @@ const Title = styled.h2`
 `;
 
 const Subtitle1 = styled.div`
-  position: fixed;
+  position: relative;
   font-size: 20px;
   line-height: 1.5;
   text-align: center;
