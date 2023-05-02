@@ -32,8 +32,8 @@ const Title = styled.h1`
   font-size: 35px;
   font-weight: bold;
   text-align: center;
-  margin: 4rem;
-  inset-block-start: 3.8rem;
+  margin: 2rem;
+  inset-block-start: 4rem;
   span {
     color: #e8314f;
   }
@@ -166,7 +166,10 @@ function Contact(): JSX.Element {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
           <ContactContainer>
             <Title>
-              Deixe aqui a sua <span>mensagem</span>
+              <h1>
+                {' '}
+                Deixe aqui a sua <span>mensagem</span>
+              </h1>
             </Title>
             <Box>
               <Form onSubmit={sendEmail}>
