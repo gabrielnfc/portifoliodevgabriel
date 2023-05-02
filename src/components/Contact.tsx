@@ -44,7 +44,7 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background-image: url('/images/bgpattern1.png');
+  background-image: url('https://i.imgur.com/1Td9VOt.png');
   inset-block-start: 1rem;
   padding: 2rem;
   margin: 0rem;

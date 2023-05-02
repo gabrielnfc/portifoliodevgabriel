@@ -10,5 +10,5 @@ export const LightTheme: DefaultTheme = {
     color: '#333',
     padding: '0',
     margin: '0',
-    logo: "/images/logob.png",
+    logo: "https://i.imgur.com/Ie838Mr.png",
 };

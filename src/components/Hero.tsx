@@ -142,7 +142,7 @@ const Container = styled.div`
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/bgpattern1.png');
+  background-image: url('https://i.imgur.com/1Td9VOt.png');
   background-attachment: fixed;
   margin: -0.5rem;
   padding: 0.2rem;
