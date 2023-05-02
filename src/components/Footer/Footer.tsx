@@ -67,35 +67,35 @@ function Footer() {
             href="https://github.com/gabrielnfc"
             target="_black"
           >
-            <img src="/images/github.ico" alt="Github" />
+            <img src="https://i.imgur.com/QzrfM2S.png" alt="Github" />
           </Button>
           <Button
             className="btn"
             href="https://www.linkedin.com/in/gabrielnfc/"
             target="_black"
           >
-            <img src="/images/Linkedin.ico" alt="Linkedin" />
+            <img src="https://i.imgur.com/yfA5Xw1.png" alt="Linkedin" />
           </Button>
           <Button
             className="btn"
             href="https://www.instagram.com/gabrielnfc/"
             target="_black"
           >
-            <img src="/images/instagram.ico" alt="Instagram" />
+            <img src="https://i.imgur.com/3F0QjnG.png" alt="Instagram" />
           </Button>
           <Button
             className="btn"
             href="https://twitter.com/gabrielnfc"
             target="_black"
           >
-            <img src="/images/twitter.ico" alt="Twitter" />
+            <img src="https://i.imgur.com/UxEYKD8.png" alt="Twitter" />
           </Button>
           <Button
             className="btn"
             href="https://api.whatsapp.com/qr/GFEOWFFQFLEZI1?autoload=1&app_absent=0"
             target="_black"
           >
-            <img src="/images/whatsapp.ico" alt="Whatsapp" />
+            <img src="https://i.imgur.com/RwKLCHS.png" alt="Whatsapp" />
           </Button>
         </Social>
         <FooterText>
