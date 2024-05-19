@@ -230,7 +230,7 @@ function About() {
                 comigo.
               </p>
               <Photography>
-                <img className="foto" src="/images/eu2.png" alt="Eu" />
+                <img className="foto" src="/images/eu.png" alt="Eu" />
               </Photography>
               <div className="hoverfoto" />
               <div className="bgfoto" />
