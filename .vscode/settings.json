@@ -1,4 +1,3 @@
-
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -10,7 +9,9 @@
   "prettier.printWidth": 80,
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": [
-      "source.formatDocument",
-      "source.fixAll.eslint"
+    "source.formatDocument",
+    "source.fixAll.eslint"
   ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

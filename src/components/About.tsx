@@ -230,7 +230,7 @@ function About() {
                 comigo.
               </p>
               <Photography>
-                <img className="foto" src="/images/eu.png" alt="Eu" />
+                <img className="foto" src="/images/eu2.png" alt="Eu" />
               </Photography>
               <div className="hoverfoto" />
               <div className="bgfoto" />
@@ -339,7 +339,7 @@ function About() {
               >
                 <Button
                   className="btn"
-                  href="https://drive.google.com/file/d/1umwlPviC3iWh29g4YtGv52oCcMnb5Nkm/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1aDuTF4ynFjXB-fgrVZvRWelX9MmFkiIH/view?usp=drive_link"
                   target="_black"
                 >
                   <p>Download CV</p>
